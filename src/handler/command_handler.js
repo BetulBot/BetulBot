@@ -15,7 +15,8 @@ function getCommands() {
 }
 
 /*
-
+    Message event for discord client
+    This function executes the commands
 */
 function addMessageEvent(client, commands) {
 
@@ -31,14 +32,14 @@ function addMessageEvent(client, commands) {
 
             if (command.check(message)) {
 
-                if(!executeCommand)executeCommand = command;
+                if (!executeCommand) executeCommand = command;
 
             }
 
         });
 
         //Check if it found a command to execute
-        if(executeCommand){
+        if (executeCommand) {
 
             executeCommand.execute(message);
 
