@@ -21,19 +21,28 @@ function addMessageEvent(client, commands) {
 
     client.on("message", message => {
 
+        let executeCommand;
+
         /*
             Go through the commands and check for each
-            if it should be executed or not and execute them then
+            if it should be executed or not
         */
         commands.forEach((command) => {
 
             if (command.check(message)) {
 
-                command.execute(message);
+                if(!executeCommand)executeCommand = command;
 
             }
 
         });
+
+        //Check if it found a command to execute
+        if(executeCommand){
+
+            executeCommand.execute(message);
+
+        }
 
     });
 
