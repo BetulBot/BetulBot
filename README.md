@@ -1,5 +1,5 @@
 # BetulBot
-
+![build](https://travis-ci.com/BetulBot/BetulBot.svg?branch=master "Build")
 ## Running
 
 The bot uses the environment variable BOT_TOKEN to set the token.
