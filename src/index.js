@@ -1,16 +1,15 @@
-const Discord = require('discord.js');
+const Discord = require("discord.js");
 const client = new Discord.Client();
+const initCommands = require("./handler/command_handler");
 
-require('dotenv').config();
+global.prefix = "b!";
 
-client.on('ready', () => {
+require("dotenv").config();
+
+client.on("ready", () => {
     console.log(`Logged in as ${client.user.tag}!`);
 });
 
-client.on('message', msg => {
-    if (msg.content === 'b!ping') {
-        msg.reply('Pong!');
-    }
-});
+initCommands(client);
 
 client.login(process.env.BOT_TOKEN);
