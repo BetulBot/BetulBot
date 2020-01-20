@@ -28,7 +28,15 @@
         "semi": [
             "error",
             "always"
-        ]
+        ],
+        "keyword-spacing": [
+            "error",
+            { 
+                "before": true, 
+                "after": true 
+            }
+        ],
+        "space-before-function-paren": ["error", "never"]
     },
     "parser": "babel-eslint"
 }
