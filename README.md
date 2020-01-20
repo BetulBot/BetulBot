@@ -1,6 +1,6 @@
-# BetulBot
+# DinaBot
 
-## Running
+## Dinaing
 
 The bot uses the environment variable BOT_TOKEN to set the token.
 
@@ -11,7 +11,7 @@ Just create a .env file in the root directory of the project and enter there you
 BOT_TOKEN=INSERT-YOUR-TOKEN-HERE
 ```
 
-## Coding Style
+## Dina Style
 The project uses [ESLint](https://github.com/eslint/eslint) to enforce a coding style.
 For code formatting the extension [Beautify](https://marketplace.visualstudio.com/items?itemName=HookyQR.beautify) is used.
 
