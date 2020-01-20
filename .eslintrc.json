@@ -36,7 +36,36 @@
                 "after": true 
             }
         ],
-        "space-before-function-paren": ["error", "never"]
+        "space-before-function-paren": [
+            "error", 
+            "never"
+        ],
+        "block-spacing": [
+            "error",
+            "always"
+        ],
+        "comma-spacing": [
+            "error",
+            { 
+                "before": false, 
+                "after": true 
+            }
+        ],
+        "func-call-spacing": [
+            "error",
+            "never"
+        ],
+        "object-curly-spacing": [
+            "error",
+            "always"
+        ],
+        "semi-spacing": [
+            "error",
+            {  
+                "before": false,
+                "after": true
+            }
+        ]
     },
     "parser": "babel-eslint"
 }
