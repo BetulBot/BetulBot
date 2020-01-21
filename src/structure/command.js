@@ -21,6 +21,18 @@ class Command {
 
     }
 
+    /*
+        Executes the command
+        Default: Reply with success message
+
+        Visit https://discord.js.org/#/docs/main/stable/class/Message for more information
+    */
+    execute(message) {
+
+        message.reply("You've successfully executed the command " + this.commandName);
+
+    }
+
 }
 
 module.exports = Command;
