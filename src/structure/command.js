@@ -17,7 +17,7 @@ class Command {
     */
     check(message) {
 
-        return (message.content === global.prefix + this.commandName);
+        return (message ? message.content === global.prefix + this.commandName : false);
 
     }
 
