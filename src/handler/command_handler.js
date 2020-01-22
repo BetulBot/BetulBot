@@ -6,8 +6,8 @@ function getCommands() {
 
     var commands = [];
 
-    commands.push(new (require("../commands/PingCommand"))("ping"));
-    commands.push(new (require("../commands/EmojiCommand"))("emoji"));
+    commands.push(new (require("../commands/ping"))("ping"));
+    commands.push(new (require("../commands/emoji"))("emoji"));
 
     return commands;
 
