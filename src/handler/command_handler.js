@@ -1,5 +1,3 @@
-const PingCommand = require("../commands/PingCommand");
-
 /*
     This function returns all commands that
     should be registered
@@ -8,7 +6,8 @@ function getCommands() {
 
     var commands = [];
 
-    commands.push(new PingCommand("ping"));
+    commands.push(new (require("../commands/PingCommand"))("ping"));
+    commands.push(new (require("../commands/EmojiCommand"))("emoji"));
 
     return commands;
 
