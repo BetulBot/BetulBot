@@ -47,6 +47,9 @@ class EmojiCommand extends Command {
         }
     }
 
+    /*
+        Vote functionality for the add command
+    */
     startAddEmojiVote(msg, options, emojiName, url) {
         msg.channel.send(this.mention(msg.author) + " started a vote to add following emoji:\n``:" + emojiName + ":``", options).then((message) => {
             //Start vote on message sent by the bot
