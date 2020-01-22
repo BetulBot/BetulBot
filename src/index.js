@@ -1,6 +1,6 @@
 const Discord = require("discord.js");
 const client = new Discord.Client();
-const initCommands = require("./handler/command_handler");
+const initCommands = require("./handler/command_handler").init;
 
 global.prefix = "b!";
 

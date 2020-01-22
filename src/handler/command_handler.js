@@ -6,6 +6,7 @@ function getCommands() {
 
     var commands = [];
 
+    commands.push(new (require("../commands/help"))("help"));
     commands.push(new (require("../commands/ping"))("ping"));
     commands.push(new (require("../commands/emoji"))("emoji"));
 
@@ -55,4 +56,7 @@ function initCommands(client) {
 
 }
 
-module.exports = initCommands;
+module.exports = {
+    init: initCommands,
+    get: getCommands
+};
