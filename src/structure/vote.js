@@ -4,7 +4,8 @@ class Vote {
     time;
 
     /*
-        Requires a message to start the vote for
+        Requires a message to start the vote for and
+        the time duration of the vote
     */
     constructor(message, time) {
 
@@ -13,6 +14,9 @@ class Vote {
 
     }
 
+    /*
+        Start the vote process
+    */
     execute() {
 
         return new Promise((resolve, reject) => {
