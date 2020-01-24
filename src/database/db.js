@@ -1,12 +1,19 @@
 const low = require("lowdb");
 const FileSync = require("lowdb/adapters/FileSync");
 
-const adapter = new FileSync("db.json");
-const db = low(adapter);
+let adapter;
+let db;
 
-db.defaults({
-    users: []
-}).write();
+function init(fileName) {
+
+    adapter = new FileSync(fileName);
+    db = low(adapter);
+
+    db.defaults({
+        users: []
+    }).write();
+
+}
 
 /*
     Function to save some user data
@@ -19,7 +26,7 @@ function setUserData(id, name, value) {
         //User exists, overwrite data
         db.get("users").find({ "id": id }).update(name, () => value).write();
 
-    } {
+    } else {
 
         //User doesn't exist, add user
         var user = {};
@@ -29,6 +36,17 @@ function setUserData(id, name, value) {
         db.get("users").push(user).write();
 
     }
+
+}
+
+/*
+    Function to get user data
+*/
+function getUserData(id, name) {
+
+    var userObject = db.get("users").find({ "id": id }).value();
+    if (userObject === undefined) return undefined;
+    else return userObject[name];
 
 }
 
@@ -57,6 +75,8 @@ function increaseUserData(id, name) {
 }
 
 module.exports = {
+    init: init,
     setUserData: setUserData,
+    getUserData: getUserData,
     increaseUserData: increaseUserData
 };

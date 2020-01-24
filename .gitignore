@@ -109,3 +109,4 @@ dist
 # Private files
 .env
 db.json
+db_test.json

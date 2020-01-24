@@ -2,7 +2,9 @@ const Discord = require("discord.js");
 const client = new Discord.Client();
 const initCommands = require("./handler/command_handler").init;
 const initEvents = require("./handler/event_handler").init;
+const db = require("./database/db");
 
+db.init("db.json");
 global.prefix = "b!";
 
 require("dotenv").config();
