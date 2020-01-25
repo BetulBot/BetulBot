@@ -4,9 +4,15 @@ class Command {
 
     /*
         name: Name of the command
+        [server-only]: Should this command only be executeable on servers? Default: false 
     */
-    constructor(name) {
+    constructor(name, serveronly) {
         this.commandName = name;
+        if (serveronly !== undefined) {
+            this.serveronly = serveronly;
+        } else {
+            this.serveronly = false;
+        }
     }
 
     /*
@@ -18,6 +24,15 @@ class Command {
     check(message) {
 
         return (message ? message.content === global.prefix + this.commandName : false);
+
+    }
+
+    /*
+        Check if this command is available
+    */
+    available(message) {
+
+        return (this.serveronly ? this.checkServer(message) : true);
 
     }
 
