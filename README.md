@@ -13,7 +13,7 @@ You can do that with the command `cd BetulBot`. Now that you are in the project 
 
 #### Setup
 Create a .env file with your discord bot token. This can be done with the command
-`echo "BOT_TOKEN=<TOKEN>" > .env`. 
+`echo "BOT_TOKEN=INSERT-YOUR-TOKEN-HERE" > .env`. 
 
 Visit the [Discord Developer Portal](https://discordapp.com/developers/applications/) to create a bot account and to get your bot token.
 
