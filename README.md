@@ -25,7 +25,7 @@ After everything's set up, you can start the bot with the command `node .` or `n
 
 The bot uses the environment variable BOT_TOKEN to set the token.
 
-You can use [dotenv](https://github.com/motdotla/dotenv) to set the environment variable locally.
+You can use [dotenv](https://github.com/motdotla/dotenv) to set it.
 
 Just create a .env file in the root directory of the project and enter there your bot token in the following format
 ```
@@ -33,7 +33,7 @@ BOT_TOKEN=INSERT-YOUR-TOKEN-HERE
 ```
 You can take a look at the example file here: [.env.example](https://github.com/BetulBot/BetulBot/blob/readme-update/.env.example)
 
-# Dependencies
+## Dependencies
 
 - [discord.js](https://github.com/discordjs/discord.js/) for interaction with the discord api
 - [lowdb](https://github.com/typicode/lowdb) as database
