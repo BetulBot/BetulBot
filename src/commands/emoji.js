@@ -184,35 +184,11 @@ class EmojiCommand extends Command {
 
                     if (command === "add") {
 
-                        this.checkPermission(msg, DPermissions.FLAGS.MANAGE_EMOJIS).then((has) => {
-
-                            if (has) {
-
-                                this.addEmoji(msg, args);
-
-                            } else {
-
-                                msg.reply("I'm sorry but you need the permission ``" + "MANAGE_EMOJIS" + "`` to execute this command.");
-
-                            }
-
-                        }).catch(console.error);
+                        this.addEmoji(msg, args);
 
                     } else if (command === "remove") {
 
-                        this.checkPermission(msg, DPermissions.FLAGS.MANAGE_EMOJIS).then((has) => {
-
-                            if (has) {
-
-                                msg.reply("**FUNCTION WORK IN PROGRESS**");
-
-                            } else {
-
-                                msg.reply("I'm sorry but you need the permission ``" + "MANAGE_EMOJIS" + "`` to execute this command.");
-
-                            }
-
-                        }).catch(console.error);
+                        msg.reply("**FUNCTION WORK IN PROGRESS**");
 
                     } else {
 
