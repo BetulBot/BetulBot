@@ -38,6 +38,7 @@ You can take a look at the example file here: [.env.example](https://github.com/
 - [discord.js](https://github.com/discordjs/discord.js/) for interaction with the discord api
 - [lowdb](https://github.com/typicode/lowdb) as database
 - [Jest](https://github.com/facebook/jest) for unit testing
+- [ESLint](https://github.com/eslint/eslint) for coding style and error prevention
 
 ## Coding Style
 The project uses [ESLint](https://github.com/eslint/eslint) and the VS Code extension [Beautify](https://marketplace.visualstudio.com/items?itemName=HookyQR.beautify) to enforce a coding style.
