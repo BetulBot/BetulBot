@@ -30,6 +30,7 @@ Just create a .env file in the root directory of the project and enter there you
 ```
 BOT_TOKEN=INSERT-YOUR-TOKEN-HERE
 ```
+You can take a look at the example file here: [.env.example](https://github.com/BetulBot/BetulBot/blob/readme-update/.env.example)
 
 # Dependencies
 
