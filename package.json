@@ -1,10 +1,11 @@
 {
   "name": "betulbot",
-  "version": "1.0.0",
-  "description": "",
+  "version": "1.1.0",
+  "description": "Discord bot",
   "main": "src/index.js",
   "scripts": {
-    "test": "eslint . && jest"
+    "test": "eslint . && jest",
+    "start": "node ."
   },
   "keywords": [],
   "author": "",
