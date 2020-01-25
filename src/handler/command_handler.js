@@ -1,5 +1,6 @@
 const asyncUtils = require("../util/async");
 const Command = require("../structure/command");
+const customCommands = require("../handler/custom_handler").getCommands;
 
 /*
     This function returns all commands that
@@ -12,6 +13,9 @@ function getCommands() {
     commands.push(new(require("../commands/help"))("help"));
     commands.push(new(require("../commands/ping"))("ping"));
     commands.push(new(require("../commands/emoji"))("emoji", true));
+
+    //Add custom commands
+    customCommands().forEach((c) => commands.push(c));
 
     return commands;
 

@@ -110,3 +110,7 @@ dist
 .env
 db.json
 db_test.json
+
+# Don't share custom commands except example
+custom/*.js
+!custom/example.js
