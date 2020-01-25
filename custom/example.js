@@ -10,6 +10,7 @@ class ExampleCommand extends Command {
         //Set commandName to customExample and set serveronly to true
         //Visit Command class constructor for more information 
         super("customExample", true);
+        //this.forceExample = true; //Uncomment this line to register this example command
     }
 
     /*

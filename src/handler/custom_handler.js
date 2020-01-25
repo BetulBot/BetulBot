@@ -43,6 +43,12 @@ function getCustomContent() {
 
                         if (req instanceof Command) {
 
+                            if (req.commandName === "customExample") {
+                                if (req.forceExample !== true) {
+                                    return;
+                                }
+                            }
+
                             console.log("[Custom] Registered custom command: " + req.commandName);
                             commands.push(req);
 
