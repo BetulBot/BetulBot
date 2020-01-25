@@ -10,13 +10,13 @@ class EmojiCommand extends Command {
 
     usage;
 
-    constructor(name) {
-        super(name);
+    constructor(name, serveronly) {
+        super(name, serveronly);
         this.usage = [
             "```",
-            global.prefix + this.commandName + " add <emoji> - Start vote to add emoji",
-            global.prefix + this.commandName + " remove <emoji> - Start vote to remove emoji",
-            global.prefix + this.commandName + " - Usage help",
+            "- " + global.prefix + this.commandName + " add <emoji> - Start vote to add emoji",
+            "- " + global.prefix + this.commandName + " remove <emoji> - Start vote to remove emoji",
+            "- " + global.prefix + this.commandName + " - Usage help",
             "When adding you can either upload a image and enter the name as emoji or use an emoji from an other server",
             "```"
         ];
@@ -26,6 +26,20 @@ class EmojiCommand extends Command {
 
         return (msg.content.startsWith(global.prefix + this.commandName));
 
+    }
+
+    available(msg) {
+        //First check if default available is true (If this is executed on a server)
+        if (super.available(msg)) {
+
+            //Check permission
+            return this.checkPermission(msg, DPermissions.FLAGS.MANAGE_EMOJIS);
+
+        } else {
+
+            return false;
+
+        }
     }
 
     /*
