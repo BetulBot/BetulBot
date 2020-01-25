@@ -1,3 +1,5 @@
+const customEvents = require("../handler/custom_handler").getEvents;
+
 /*
     This function returns all events that
     should be registered
@@ -7,6 +9,9 @@ function getEvents() {
     var events = [];
 
     events.push(new(require("../events/counter"))("counter"));
+
+    //Add custom commands
+    customEvents().forEach((e) => events.push(e));
 
     return events;
 
