@@ -7,17 +7,17 @@
 #### Clone the repo
 Run `git clone https://github.com/BetulBot/BetulBot.git` in your terminal to get a local copy of the repository.
 
-### Install dependencies
+#### Install dependencies
 In order to install the dependencies you need to navigate in the project folder.
 You can do that with the command `cd BetulBot`. Now that you are in the project folder you can run `npm install` and the dependencies will be installed.
 
-### Setup
+#### Setup
 Create a .env file with your discord bot token. This can be done with the command
 `echo "BOT_TOKEN=<TOKEN>" > .env`. 
 
 Visit the [Discord Developer Portal](https://discordapp.com/developers/applications/) to create a bot account and to get your bot token.
 
-### Running
+#### Running
 After everything's set up, you can start the bot with the command `node .` or `npm start`
 
 ## Configuration
