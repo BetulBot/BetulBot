@@ -14,6 +14,20 @@ class ExampleCommand extends Command {
     }
 
     /*
+        Check if command should be executed
+    */
+    check(msg) {
+        return super.check(msg); //Return default value
+    }
+
+    /*
+        Check if command is available
+    */
+    available(msg) {
+        return super.available(msg); //Return default value
+    }
+
+    /*
         Visit https://discord.js.org/#/docs/main/stable/class/Message to
         see how to use the msg variable
     */
