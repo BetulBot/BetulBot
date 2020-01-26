@@ -37,12 +37,14 @@ class HelpCommand extends Command {
 
     execute(msg) {
 
+        const { version } = require("../../package.json");
+
         var availableCommands = this.getAvailableCommands(msg);
         availableCommands.then((pAvailableCommands) => {
             pAvailableCommands = pAvailableCommands.map(command => "- " + global.prefix + command.commandName);
 
             //TODO: maybe add a description? (in Command class)
-            msg.reply("Here is a list of all available commands: \n```\n" + pAvailableCommands.join("\n") + "```");
+            msg.reply("Here is a list of all available commands: \n```\n" + pAvailableCommands.join("\n") + "```" + "BetulBot v. " + version);
         });
 
     }
