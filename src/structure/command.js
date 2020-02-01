@@ -40,7 +40,7 @@ class Command {
     */
     available(message) {
 
-        return (this.serveronly ? this.checkServer(message) : true);
+        return (this.options.serveronly ? this.checkServer(message) : true);
 
     }
 
