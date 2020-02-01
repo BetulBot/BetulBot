@@ -1,6 +1,4 @@
-# BetulBot
-
-![build](https://travis-ci.com/BetulBot/BetulBot.svg?branch=master "Build")
+# BetulBot ![build](https://travis-ci.com/BetulBot/BetulBot.svg?branch=master "Build")
 
 ## Installation
 
