@@ -2,17 +2,25 @@ class Command {
 
     commandName
 
+    options
+
     /*
         name: Name of the command
-        [server-only]: Should this command only be executeable on servers? Default: false 
+        [options]: 
+            - serveronly (boolean) - Should this command only be executeable on servers? Default: false 
     */
-    constructor(name, serveronly) {
+    constructor(name, options) {
+
         this.commandName = name;
-        if (serveronly !== undefined) {
-            this.serveronly = serveronly;
+
+        if (options !== undefined) {
+            this.options = options;
         } else {
-            this.serveronly = false;
+            this.options = {
+                serveronly: false
+            };
         }
+
     }
 
     /*
@@ -54,6 +62,38 @@ class Command {
     checkServer(message) {
 
         return (message.guild && message.guild.available);
+
+    }
+
+    /*
+        Function to set usage for this command
+        
+        Example:
+
+        this.setUsage([
+            ["command", "Description"],
+            ["command <argument>", "Description"],
+            ["", "Usage help"],
+            "Some general information about command"
+        ]);
+
+    */
+    setUsage(usage) {
+
+        var usageString = "```\n";
+
+        usage.forEach(command => {
+            if (typeof(command) === "object") {
+                var cmd = (command[0] != "" ? " " + command[0].trim() : "");
+                usageString += "- " + global.prefix + this.commandName + cmd + " - " + command[1].trim() + "\n";
+            } else {
+                usageString += command + "\n";
+            }
+        });
+
+        usageString += "```";
+
+        this.usage = usageString;
 
     }
 
@@ -114,11 +154,13 @@ class Command {
         Simple function to get the mention string from a user
     */
     mention(author) {
+
         if (author.id) {
             return "<@" + author.id + ">";
         } else {
             return "";
         }
+
     }
 
 }

@@ -9,7 +9,9 @@ class ExampleCommand extends Command {
     constructor() {
         //Set commandName to customExample and set serveronly to true
         //Visit Command class constructor for more information 
-        super("customExample", true);
+        super("customExample", {
+            serveronly: true //This option sets that the command should only be executeable on servers
+        });
         //this.forceExample = true; //Uncomment this line to register this example command
     }
 

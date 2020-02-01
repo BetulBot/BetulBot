@@ -69,6 +69,38 @@
                 "before": false,
                 "after": true
             }
+        ],
+        "padding-line-between-statements": [
+            "error",
+            {
+                "blankLine": "always",
+                "prev": "function",
+                "next": "*"
+            },
+            {
+                "blankLine": "always",
+                "prev": "if",
+                "next": "*"
+            },
+            {
+                "blankLine": "always",
+                "prev": "*",
+                "next": "return"
+            },
+            {
+                "blankLine": "always",
+                "prev": "block",
+                "next": "*"
+            },
+            {
+                "blankLine": "always",
+                "prev": "block-like",
+                "next": "*"
+            }
+        ],
+        "lines-between-class-members": [
+            "error", 
+            "always"
         ]
     },
     "parser": "babel-eslint"

@@ -8,8 +8,9 @@ class EmojiCommand extends Command {
 
     usage;
 
-    constructor(name, serveronly) {
-        super(name, serveronly);
+    constructor(name, options) {
+        super(name, options);
+        /*
         this.usage = [
             "```",
             "- " + global.prefix + this.commandName + " add <emoji> - Start vote to add emoji",
@@ -18,6 +19,13 @@ class EmojiCommand extends Command {
             "When adding you can either upload a image and enter the name as emoji or use an emoji from an other server",
             "```"
         ];
+        */
+        this.setUsage([
+            ["add <emoji>", "Start vote to add emoji"],
+            ["remove <emoji>", "Start vote to remove emoji"],
+            ["", "Usage help"],
+            "When adding you can either upload a image and enter the name as emoji or use an emoji from an other server"
+        ]);
     }
 
     check(msg) {
@@ -67,21 +75,21 @@ class EmojiCommand extends Command {
                     } else {
 
                         //Return usage if invalid command is given
-                        msg.reply(this.usage.join("\n"));
+                        msg.reply(this.usage);
 
                     }
 
                 } else {
 
                     //Return usage if invalid length of arguments are given
-                    msg.reply(this.usage.join("\n"));
+                    msg.reply(this.usage);
 
                 }
 
             } else {
 
                 //Return usage if no arguments are given
-                msg.reply(this.usage.join("\n"));
+                msg.reply(this.usage);
 
             }
 

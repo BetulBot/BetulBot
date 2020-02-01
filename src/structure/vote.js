@@ -1,6 +1,7 @@
 class Vote {
 
     message;
+
     time;
 
     /*
@@ -56,6 +57,7 @@ class Vote {
 
                             if (reaction._emoji.name === "👍")
                                 upvotes = reaction.count - (reaction.me ? 1 : 0);
+
                             if (reaction._emoji.name === "👎")
                                 downvotes = reaction.count - (reaction.me ? 1 : 0);
 

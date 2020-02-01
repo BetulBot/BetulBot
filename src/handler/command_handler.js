@@ -11,13 +11,33 @@ function getCommands() {
     var commands = [];
 
     commands.push(new(require("../commands/help"))("help"));
+
     commands.push(new(require("../commands/ping"))("ping"));
-    commands.push(new(require("../commands/emoji/emoji"))("emoji", true));
+
+    commands.push(new(require("../commands/emoji/emoji"))("emoji", {
+        serveronly: true
+    }));
 
     //Add custom commands
     customCommands().forEach((c) => commands.push(c));
 
     return commands;
+
+}
+
+function getCommandByName(name) {
+
+    var target = undefined;
+
+    getCommands().forEach((command) => {
+
+        if (command.commandName === name) {
+            target = command;
+        }
+
+    });
+
+    return target;
 
 }
 
@@ -103,5 +123,6 @@ function initCommands(client) {
 
 module.exports = {
     init: initCommands,
-    get: getCommands
+    get: getCommands,
+    getCommandByName: getCommandByName
 };
