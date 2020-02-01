@@ -12,7 +12,7 @@ function getCommands() {
 
     commands.push(new(require("../commands/help"))("help"));
     commands.push(new(require("../commands/ping"))("ping"));
-    commands.push(new(require("../commands/emoji"))("emoji", true));
+    commands.push(new(require("../commands/emoji/emoji"))("emoji", true));
 
     //Add custom commands
     customCommands().forEach((c) => commands.push(c));
