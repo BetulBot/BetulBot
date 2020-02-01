@@ -34,6 +34,7 @@ You can take a look at the example file here: [.env.example](https://github.com/
 ## Dependencies
 
 - [discord.js](https://github.com/discordjs/discord.js/) for interaction with the discord api
+- [dotenv](https://github.com/motdotla/dotenv) for environment variable loading
 - [lowdb](https://github.com/typicode/lowdb) as database
 - [Jest](https://github.com/facebook/jest) for unit testing
 - [ESLint](https://github.com/eslint/eslint) for coding style and error prevention
