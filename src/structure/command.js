@@ -151,6 +151,28 @@ class Command {
     }
 
     /*
+           Check if the message's author has a certain permission in a channel
+           Returns Promise<boolean>
+
+           Visit https://discord.js.org/#/docs/main/stable/class/Permissions?scrollTo=s-FLAGS for more information
+           about permissions
+       */
+    checkChannelPermission(message, permission) {
+
+        //Obviously this function is also only available on servers
+        if (this.checkServer(message)) {
+
+            return message.channel.memberPermissions(message.author).has(permission);
+
+        } else {
+
+            return null;
+
+        }
+
+    }
+
+    /*
         Simple function to get the mention string from a user
     */
     mention(author) {

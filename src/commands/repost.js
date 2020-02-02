@@ -24,7 +24,7 @@ class RepostCommand extends Command {
         if (super.available(msg)) {
 
             //Check permission
-            return this.checkPermission(msg, DPermissions.FLAGS.MANAGE_MESSAGES);
+            return this.checkChannelPermission(msg, DPermissions.FLAGS.MANAGE_MESSAGES);
 
         } else {
 
