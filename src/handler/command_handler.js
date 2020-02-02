@@ -18,6 +18,10 @@ function getCommands() {
         serveronly: true
     }));
 
+    commands.push(new(require("../commands/repost"))("repost", {
+        serveronly: true
+    }));
+
     //Add custom commands
     customCommands().forEach((c) => commands.push(c));
 
