@@ -60,7 +60,19 @@ class Command {
             }
 
         } else {
-            return true;
+
+            //Check if executed on server
+            if (this.checkServer(message)) {
+
+                //Check if command is enabled
+                let enabled = db.server.getServerData(message.guild.id, "command_" + this.commandName + "_enabled");
+
+                return (enabled !== false);
+
+            } else {
+                return true;
+            }
+
         }
 
     }
