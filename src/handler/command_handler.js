@@ -12,6 +12,10 @@ function getCommands() {
 
     commands.push(new(require("../commands/help"))("help"));
 
+    commands.push(new(require("../commands/toggle"))("toggle", {
+        serveronly: true
+    }));
+
     commands.push(new(require("../commands/ping"))("ping"));
 
     commands.push(new(require("../commands/emoji/emoji"))("emoji", {

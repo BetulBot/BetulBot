@@ -1,3 +1,5 @@
+const db = require("../database/db");
+
 class Command {
 
     commandName
@@ -40,7 +42,26 @@ class Command {
     */
     available(message) {
 
-        return (this.options.serveronly ? this.checkServer(message) : true);
+        //return (this.options.serveronly ? this.checkServer(message) : true);
+
+        //Check if is server only
+        if (this.options.serveronly) {
+
+            //Check if executed on server
+            if (this.checkServer(message)) {
+
+                //Check if command is enabled
+                let enabled = db.server.getServerData(message.guild.id, "command_" + this.commandName + "_enabled");
+
+                return (enabled !== false);
+
+            } else {
+                return false;
+            }
+
+        } else {
+            return true;
+        }
 
     }
 

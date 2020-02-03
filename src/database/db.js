@@ -10,11 +10,15 @@ function init(fileName) {
     db = low(adapter);
 
     db.defaults({
-        users: []
+        users: [],
+        guilds: []
     }).write();
 
     //Load user db functions
     module.exports.user = require("./user_db")(db);
+
+    //Load server db functions
+    module.exports.server = require("./server_db")(db);
 
 }
 
