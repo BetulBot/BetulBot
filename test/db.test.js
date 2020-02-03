@@ -11,17 +11,17 @@ test("db_test.json exists", () => {
 describe("data test", () => {
 
     beforeEach(() => {
-        db.setUserData("500", "test", 50);
+        db.user.setUserData("500", "test", 50);
     });
 
-    test("db.getUserData(\"500\", \"test\") should return 50", () => {
-        expect(db.getUserData("500", "test")).toEqual(50);
+    test("db.user.getUserData(\"500\", \"test\") should return 50", () => {
+        expect(db.user.getUserData("500", "test")).toEqual(50);
     });
 
-    test("db.increaseUserData(\"500\", \"test\") should increase value to 51", () => {
+    test("db.user.increaseUserData(\"500\", \"test\") should increase value to 51", () => {
 
-        db.increaseUserData("500", "test");
-        expect(db.getUserData("500", "test")).toEqual(51);
+        db.user.increaseUserData("500", "test");
+        expect(db.user.getUserData("500", "test")).toEqual(51);
 
     });
 

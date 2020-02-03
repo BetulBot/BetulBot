@@ -9,7 +9,7 @@ class CounterEvent extends BEvent {
 
     execute(msg) {
 
-        db.increaseUserData(msg.author.id, "sentMessages");
+        db.user.increaseUserData(msg.author.id, "sentMessages");
 
     }
 
