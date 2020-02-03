@@ -10,6 +10,7 @@ class Command {
         name: Name of the command
         [options]: 
             - serveronly (boolean) - Should this command only be executeable on servers? Default: false 
+            - default_disabled (boolean) - Should this command be disabled by default? Default: false
     */
     constructor(name, options) {
 
@@ -19,7 +20,8 @@ class Command {
             this.options = options;
         } else {
             this.options = {
-                serveronly: false
+                serveronly: false,
+                default_disabled: false
             };
         }
 
@@ -42,37 +44,22 @@ class Command {
     */
     available(message) {
 
-        //return (this.options.serveronly ? this.checkServer(message) : true);
+        //Check if executed on server
+        if (this.checkServer(message)) {
 
-        //Check if is server only
-        if (this.options.serveronly) {
+            //Check if command is enabled
+            let enabled = db.server.getServerData(message.guild.id, "command_" + this.commandName + "_enabled");
 
-            //Check if executed on server
-            if (this.checkServer(message)) {
-
-                //Check if command is enabled
-                let enabled = db.server.getServerData(message.guild.id, "command_" + this.commandName + "_enabled");
-
-                return (enabled !== false);
-
+            //Check if command is disabled by default
+            if (this.options.default_disabled === true) {
+                //If the command is disabled by default it should only be available if it's enabled
+                return (enabled === true);
             } else {
-                return false;
+                return (enabled !== false);
             }
 
         } else {
-
-            //Check if executed on server
-            if (this.checkServer(message)) {
-
-                //Check if command is enabled
-                let enabled = db.server.getServerData(message.guild.id, "command_" + this.commandName + "_enabled");
-
-                return (enabled !== false);
-
-            } else {
-                return true;
-            }
-
+            return (this.options.serveronly !== true);
         }
 
     }

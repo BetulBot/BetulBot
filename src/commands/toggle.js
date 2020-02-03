@@ -48,7 +48,13 @@ class ToggleCommand extends Command {
                 var name = targetCommand.commandName;
 
                 var oldValue = db.server.getServerData(msg.guild.id, "command_" + name + "_enabled");
-                var newValue = (oldValue !== false ? false : true);
+                let newValue;
+
+                if (targetCommand.options.default_disabled) {
+                    newValue = (oldValue === true ? false : true);
+                } else {
+                    newValue = (oldValue !== false ? false : true);
+                }
 
                 db.server.setServerData(msg.guild.id, "command_" + name + "_enabled", newValue);
 

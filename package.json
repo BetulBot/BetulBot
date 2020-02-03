@@ -1,27 +1,27 @@
 {
-    "name": "betulbot",
-    "version": "2.3.1",
-    "description": "Discord bot",
-    "main": "src/index.js",
-    "scripts": {
-        "test": "eslint . && jest",
-        "start": "node ."
-    },
-    "keywords": [],
-    "author": "BetulBot",
-    "license": "MIT",
-    "dependencies": {
-        "discord.js": "^11.5.1",
-        "dotenv": "^8.2.0",
-        "lowdb": "^1.0.0"
-    },
-    "devDependencies": {
-        "@babel/core": "^7.8.3",
-        "@babel/plugin-proposal-class-properties": "^7.8.3",
-        "@babel/preset-env": "^7.8.3",
-        "babel-eslint": "^10.0.3",
-        "babel-jest": "^25.1.0",
-        "eslint": "^6.8.0",
-        "jest": "^25.1.0"
-    }
+  "name": "betulbot",
+  "version": "2.4.0",
+  "description": "Discord bot",
+  "main": "src/index.js",
+  "scripts": {
+    "test": "eslint . && jest",
+    "start": "node ."
+  },
+  "keywords": [],
+  "author": "BetulBot",
+  "license": "MIT",
+  "dependencies": {
+    "discord.js": "^11.5.1",
+    "dotenv": "^8.2.0",
+    "lowdb": "^1.0.0"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.8.3",
+    "@babel/plugin-proposal-class-properties": "^7.8.3",
+    "@babel/preset-env": "^7.8.3",
+    "babel-eslint": "^10.0.3",
+    "babel-jest": "^25.1.0",
+    "eslint": "^6.8.0",
+    "jest": "^25.1.0"
+  }
 }

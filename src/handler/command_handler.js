@@ -16,7 +16,9 @@ function getCommands() {
         serveronly: true
     }));
 
-    commands.push(new(require("../commands/ping"))("ping"));
+    commands.push(new(require("../commands/ping"))("ping", {
+        default_disabled: true
+    }));
 
     commands.push(new(require("../commands/emoji/emoji"))("emoji", {
         serveronly: true
