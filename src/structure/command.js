@@ -11,6 +11,7 @@ class Command {
         [options]: 
             - serveronly (boolean) - Should this command only be executeable on servers? Default: false 
             - default_disabled (boolean) - Should this command be disabled by default? Default: false
+            - force_enabled (boolean) - If true the command can't be toggled. Default: false
     */
     constructor(name, options) {
 
@@ -21,7 +22,8 @@ class Command {
         } else {
             this.options = {
                 serveronly: false,
-                default_disabled: false
+                default_disabled: false,
+                force_enabled: false
             };
         }
 
@@ -50,10 +52,11 @@ class Command {
             //Check if command is enabled
             let enabled = db.server.getServerData(message.guild.id, "command_" + this.commandName + "_enabled");
 
-            //Check if command is disabled by default
             if (this.options.default_disabled === true) {
                 //If the command is disabled by default it should only be available if it's enabled
                 return (enabled === true);
+            } else if (this.options.force_enabled) {
+                return true;
             } else {
                 return (enabled !== false);
             }

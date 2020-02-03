@@ -47,22 +47,27 @@ class ToggleCommand extends Command {
 
                 var name = targetCommand.commandName;
 
-                var oldValue = db.server.getServerData(msg.guild.id, "command_" + name + "_enabled");
-                let newValue;
+                if (targetCommand.options.force_enabled !== true) {
+                    var oldValue = db.server.getServerData(msg.guild.id, "command_" + name + "_enabled");
+                    let newValue;
 
-                if (targetCommand.options.default_disabled) {
-                    newValue = (oldValue === true ? false : true);
+                    if (targetCommand.options.default_disabled) {
+                        newValue = (oldValue === true ? false : true);
+                    } else {
+                        newValue = (oldValue !== false ? false : true);
+                    }
+
+                    db.server.setServerData(msg.guild.id, "command_" + name + "_enabled", newValue);
+
+                    if (newValue) {
+                        msg.reply("Enabled command ``" + name + "``");
+                    } else {
+                        msg.reply("Disabled command ``" + name + "``");
+                    }
                 } else {
-                    newValue = (oldValue !== false ? false : true);
+                    msg.reply("The command ``" + name + "`` can't be toggled.");
                 }
 
-                db.server.setServerData(msg.guild.id, "command_" + name + "_enabled", newValue);
-
-                if (newValue) {
-                    msg.reply("Enabled command ``" + name + "``");
-                } else {
-                    msg.reply("Disabled command ``" + name + "``");
-                }
 
             } else {
 

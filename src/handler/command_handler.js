@@ -10,10 +10,13 @@ function getCommands() {
 
     var commands = [];
 
-    commands.push(new(require("../commands/help"))("help"));
+    commands.push(new(require("../commands/help"))("help", {
+        force_enabled: true
+    }));
 
     commands.push(new(require("../commands/toggle"))("toggle", {
-        serveronly: true
+        serveronly: true,
+        force_enabled: true
     }));
 
     commands.push(new(require("../commands/ping"))("ping", {
